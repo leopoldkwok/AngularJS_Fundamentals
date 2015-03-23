@@ -17,15 +17,18 @@
 	<script src ='angular.min.js'></script>
 	
 	<script>
-	var demoApp = angular.module('demoApp', []);
+		var demoApp = angular.module('demoApp', []);
 
-	demoApp.controller('SimpleController', function ($scope) {
-			$scope.customers = [
-				{ name: 'John Smith', city:'Phoenix'}, 
-				{ name:'John Doe', city: 'New York'}, 
-				{ name:'Jane Doe', city: 'San Francisco'}
-			];
-		});
+		var controllers = {};
+		controllers.SimpleController = function($scope) {
+				$scope.customers = [
+					{ name:'John Smith', city:'Phoenix'}, 
+					{ name:'John Doe', city: 'New York'}, 
+					{ name:'Jane Doe', city: 'San Francisco'}
+				];
+			};
+	
+		demoApp.controller(controllers);
 		
 
 	</script>
